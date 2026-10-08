@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171216" />
+  <meta name="description" content="A little story of Muhammad Fauzia & Dinda Kharnita." />
+  <title>For Dinda — Our Little Story ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="cursor-glow"></div>
+
+  <!-- Secret access flow -->
+  <section class="access-shell" id="opening">
+    <div class="access-particles" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="access-orbit access-orbit-one" aria-hidden="true"></div>
+    <div class="access-orbit access-orbit-two" aria-hidden="true"></div>
+
+    <div class="access-step" id="scanStep">
+      <div class="access-content">
+        <p class="eyebrow access-brand">A PRIVATE LITTLE WORLD</p>
+        <p class="access-kicker">SECRET ACCESS</p>
+        <h1 class="access-title">Something special<br><em>is waiting for you.</em></h1>
+        <p class="access-copy">A little story, made just for you.</p>
+        <p class="scan-instruction">Scan to unlock</p>
+        <div class="scanner-frame" id="scannerFrame" aria-label="QR code scanner">
+          <span class="scanner-corner corner-top-left"></span>
+          <span class="scanner-corner corner-top-right"></span>
+          <span class="scanner-corner corner-bottom-left"></span>
+          <span class="scanner-corner corner-bottom-right"></span>
+          <svg class="scanner-mark" viewBox="0 0 72 72" aria-hidden="true">
+            <path d="M8 28V12a4 4 0 0 1 4-4h16M44 8h16a4 4 0 0 1 4 4v16M64 44v16a4 4 0 0 1-4 4H44M28 64H12a4 4 0 0 1-4-4V44" />
+            <path d="M24 24h8v8h-8zM40 24h8v8h-8zM24 40h8v8h-8zM40 40h8v8h-8z" />
+          </svg>
+          <span class="scan-beam" aria-hidden="true"></span>
+          <video class="scanner-video" id="scannerVideo" playsinline muted aria-label="Camera QR preview"></video>
+        </div>
+        <p class="access-tagline">Your story starts here.</p>
+        <p class="scan-result hidden" id="scanResult"><span>SCAN COMPLETE</span><small>Access verified.</small></p>
+        <div class="scanner-actions">
+          <button class="primary-btn scanner-camera" id="cameraScanButton" type="button">Use camera scanner</button>
+          <button class="secondary-btn scanner-demo" id="demoScanButton" type="button">Continue with demo scan</button>
+        </div>
+        <p class="scanner-status" id="scannerStatus" role="status" aria-live="polite">Your camera stays on this device.</p>
+        <p class="access-footnote">A playful little gate, made for the surprise.</p>
+      </div>
+    </div>
+
+    <div class="access-step hidden" id="codeStep">
+      <div class="access-content code-content">
+        <p class="eyebrow access-brand">SCAN COMPLETE</p>
+        <p class="access-kicker">ONE LAST SECRET</p>
+        <h1 class="access-title">Enter your<br><em>secret code.</em></h1>
+        <p class="access-copy">One last little key, and the story is yours.</p>
+        <form class="secret-code-form" id="secretCodeForm">
+          <div class="code-inputs" id="codeInputs" aria-label="Four digit secret code">
+            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="Secret code digit 1">
+            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 2">
+            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 3">
+            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 4">
+          </div>
+          <p class="code-error" id="codeError" role="alert" aria-live="polite"></p>
+          <button class="primary-btn code-submit" type="submit">Unlock My Surprise <span class="btn-heart">♡</span></button>
+        </form>
+        <p class="access-footnote">A playful little gate, made for the surprise.</p>
+      </div>
+    </div>
+
+    <div class="access-step hidden" id="grantedStep" aria-live="polite">
+      <div class="access-content granted-content">
+        <div class="unlock-mark" aria-hidden="true"><span>♡</span></div>
+        <p class="access-kicker">ACCESS GRANTED</p>
+        <h1 class="access-title">Welcome,<br><em>Dinda.</em></h1>
+        <p class="access-copy">Your little world is opening.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="mainContent" class="hidden">
+    <header class="site-header">
+      <a class="site-brand" href="#birthday" aria-label="Birthday, back to top">
+        <span class="site-brand-mark">D</span>
+        <span><strong>FOR DINDA</strong><small>A birthday love story</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavigation">
+        <span></span><span></span>
+      </button>
+      <nav class="site-navigation" id="siteNavigation" aria-label="Main navigation">
+        <a href="#birthday">Birthday</a>
+        <a href="#story">Our Story</a>
+        <a href="#memories">Memories</a>
+        <a href="#letter">The Letter</a>
+        <a href="#music">Music</a>
+        <a href="#closing">Wish</a>
+      </nav>
+    </header>
+    <!-- Hero -->
+    <section class="hero section" id="birthday">
+      <div class="hero-bg"></div>
+      <div class="hero-inner">
+        <p class="eyebrow reveal">31 · 12 · 2004</p>
+        <h2 class="hero-title reveal">Happy Birthday,<br><em>Dinda.</em></h2>
+        <p class="hero-sub reveal">Across every little moment that led us here, I made this corner of the internet just for you.</p>
+        <div class="hero-date reveal">31 DECEMBER</div>
+        <div class="birthday-countdown reveal" aria-label="Countdown ulang tahun Dinda">
+          <p class="countdown-label">COUNTING DOWN TO YOUR DAY</p>
+          <div class="countdown-units">
+            <div class="countdown-unit"><span id="countdownDays">000</span><small>HARI</small></div>
+            <span class="countdown-divider">:</span>
+            <div class="countdown-unit"><span id="countdownHours">00</span><small>JAM</small></div>
+            <span class="countdown-divider">:</span>
+            <div class="countdown-unit"><span id="countdownMinutes">00</span><small>MENIT</small></div>
+            <span class="countdown-divider">:</span>
+            <div class="countdown-unit"><span id="countdownSeconds">00</span><small>DETIK</small></div>
+          </div>
+          <p class="countdown-message" id="countdownMessage" aria-live="polite"></p>
+        </div>
+        <div class="scroll-hint reveal"><span></span> Scroll slowly</div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro section" id="story">
+      <div class="section-number">01</div>
+      <div class="narrow">
+        <p class="eyebrow reveal">OUR STORY <span class="identity-cross">·</span> MUHAMMAD FAUZIA <span class="identity-cross">×</span> DINDA KHARNITA</p>
+        <h2 class="display reveal">Sometimes,<br>something beautiful<br><em>begins unexpectedly.</em></h2>
+        <div class="story-copy reveal">
+          <p>Our story began with something completely unexpected: a project called <strong>VISCO 2025</strong>.</p>
+          <p>I was there as a Brand Ambassador representing <strong>Computer Engineering Technology</strong>. Somewhere between the busy days, little conversations, and moments that seemed ordinary, I started getting closer to you.</p>
+          <p>What began as a small project slowly became one of the most meaningful stories in my life.</p>
+        </div>
+        <div class="story-date reveal"><span>THE DAY WE BECAME US</span><strong>13 December 2025</strong></div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline section">
+      <div class="section-number">02</div>
+      <div class="narrow">
+        <p class="eyebrow reveal">OUR LITTLE TIMELINE</p>
+        <h2 class="display reveal">From that moment<br>to <em>us.</em></h2>
+        <div class="timeline-list">
+          <article class="timeline-item reveal">
+            <span class="time">2025</span>
+            <div>
+              <h3>VISCO 2025</h3>
+              <p>Where our paths started getting closer.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="time">13.12.2025</span>
+            <div>
+              <h3>The day we became us</h3>
+              <p>A date I'll always remember.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="time">31.12.25</span>
+            <div>
+              <h3>Your birthday</h3>
+              <p>The first birthday of yours after we became “us”.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="time">NOW</span>
+            <div>
+              <h3>Still here.</h3>
+              <p>Still choosing you. Still making memories.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memories -->
+    <section class="memories section" id="memories">
+      <div class="section-number">03</div>
+      <div class="memories-head">
+        <div>
+          <p class="eyebrow reveal">OUR MEMORIES</p>
+          <h2 class="display reveal">Eight little<br><em>pieces of us.</em></h2>
+        </div>
+        <p class="memory-help reveal">Swipe · drag · use ← →<br>Click a photo to open it.</p>
+      </div>
+
+      <div class="memory-stage" id="memoryStage">
+        <div class="memory-track" id="memoryTrack"></div>
+      </div>
+
+      <div class="memory-controls">
+        <button class="circle-btn" id="prevMemory" aria-label="Previous memory">←</button>
+        <span class="memory-counter" id="memoryCounter">01 / 08</span>
+        <button class="circle-btn" id="nextMemory" aria-label="Next memory">→</button>
+      </div>
+    </section>
+
+    <!-- Things -->
+    <section class="things section">
+      <div class="section-number">04</div>
+      <div class="narrow">
+        <p class="eyebrow reveal">LITTLE THINGS</p>
+        <h2 class="display reveal">Things I quietly<br><em>love about you.</em></h2>
+        <div class="things-grid">
+          <div class="thing reveal"><span>01</span><h3>Your smile</h3><p>It has a way of making ordinary days feel lighter.</p></div>
+          <div class="thing reveal"><span>02</span><h3>Your presence</h3><p>Sometimes I don't need anything else. Just you being there.</p></div>
+          <div class="thing reveal"><span>03</span><h3>The little things</h3><p>The tiny moments that somehow become my favorite memories.</p></div>
+          <div class="thing reveal"><span>04</span><h3>You being you</h3><p>No perfect version. Just you. And that's more than enough.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Song -->
+    <section class="song section" id="music">
+      <div class="song-card reveal">
+        <div class="vinyl">
+          <div class="vinyl-label">S</div>
+        </div>
+        <div>
+          <p class="eyebrow">OUR SONG</p>
+          <h2>Silence</h2>
+          <p class="artist">Marshmello & Khalid</p>
+          <p class="song-note">A song that belongs to this little chapter of us.</p>
+        </div>
+        <button class="music-toggle" id="musicToggle" aria-label="Play or pause music">▶</button>
+      </div>
+    </section>
+
+    <!-- Letter -->
+    <section class="letter section" id="letter">
+      <div class="section-number">05</div>
+      <div class="letter-wrap">
+        <p class="eyebrow reveal">A LETTER FOR YOU</p>
+        <h2 class="display reveal">There are things<br>I'd rather <em>write.</em></h2>
+        <button class="envelope reveal" id="openLetter" aria-label="Open letter">
+          <div class="envelope-top"></div>
+          <div class="letter-paper">
+            <span>For Dinda</span>
+            <small>tap to open</small>
+          </div>
+          <div class="envelope-bottom"></div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Final -->
+    <section class="final section" id="closing">
+      <div class="final-bg"></div>
+      <div class="final-inner">
+        <p class="eyebrow reveal">ALWAYS, YOURS</p>
+        <h2 class="display reveal">If I could choose again,<br><em>I'd still choose you.</em></h2>
+        <p class="final-copy reveal">Happy Birthday, Dinda.</p>
+        <p class="signature reveal">— Muhammad Fauzia</p>
+        <div class="final-date reveal">31 DECEMBER 2004</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Music -->
+  <audio id="bgMusic" loop preload="metadata">
+    <source src="assets/music/silence.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Memory modal -->
+  <div class="modal" id="memoryModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="memory"></div>
+    <div class="memory-modal">
+      <button class="modal-close" data-close="memory">×</button>
+      <div class="modal-image-wrap">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-info">
+        <span id="modalIndex">01</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalCaption"></p>
+        <div class="modal-actions">
+          <button class="secondary-btn" id="downloadMemory">↓ Download PNG HD</button>
+          <button class="secondary-btn" id="printMemory">Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Letter modal -->
+  <div class="modal" id="letterModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="letter"></div>
+    <div class="letter-modal">
+      <button class="modal-close" data-close="letter">×</button>
+      <p class="eyebrow">DEAR DINDA,</p>
+      <div class="typed-letter" id="typedLetter"></div>
+      <p class="letter-sign">— Fauzia</p>
+    </div>
+  </div>
+
+  <div class="music-pill" id="musicPill">
+    <span class="music-dot"></span>
+    <span id="musicStatus">music off</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
