@@ -334,7 +334,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .qr-card h1 { margin:24px 0 10px; font:500 clamp(48px,12vw,72px)/.9 var(--serif); letter-spacing:-.04em; }
 .qr-card h1 em { color:var(--accent-2);font-family:var(--script);font-weight:400; }
 .qr-card > p:not(.eyebrow) { color:var(--muted);font-size:13px;line-height:1.8; }
-.qr-code-frame { display:grid;place-items:center;width:min(100%,300px);aspect-ratio:1;margin:28px auto 20px;padding:13px;border-radius:12px;background:#fff; }
+.qr-code-frame { display:grid;place-items:center;width:min(100%,320px);aspect-ratio:1;margin:28px auto 20px;padding:0;border:10px solid #fff;border-radius:12px;background:#fff;box-shadow:0 14px 42px rgba(0,0,0,.3); }
 .qr-code-frame canvas, .qr-code-frame img { display:block;width:100%;height:100%;image-rendering:pixelated; }
 .qr-status { min-height:18px;margin:10px 0 16px;color:#bcaab0;font-size:11px; }
 .qr-url { display:block;margin:14px 0;color:var(--accent-2);font:10px/1.7 var(--mono);overflow-wrap:anywhere; }
