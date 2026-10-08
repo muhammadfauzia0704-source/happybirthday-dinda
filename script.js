@@ -1,12 +1,12 @@
 const memories = [
-  { file: "assets/photos/photo-01.jpg", title: "The beginning", caption: "one of my favorite moments.", date: "OUR MEMORY" },
-  { file: "assets/photos/photo-02.jpg", title: "That smile", caption: "you looked beautiful that day.", date: "OUR MEMORY" },
-  { file: "assets/photos/photo-03.jpg", title: "Just us", caption: "small moment, big memory.", date: "OUR MEMORY" },
-  { file: "assets/photos/photo-04.jpg", title: "A favorite day", caption: "another memory I want to keep.", date: "OUR MEMORY" },
-  { file: "assets/photos/photo-05.jpg", title: "Little things", caption: "the little things stay with me.", date: "OUR MEMORY" },
-  { file: "assets/photos/photo-06.jpg", title: "With you", caption: "ordinary days feel different with you.", date: "OUR MEMORY" },
-  { file: "assets/photos/photo-07.jpg", title: "Still choosing you", caption: "a quiet promise, for every day.", date: "OUR MEMORY" },
-  { file: "assets/photos/photo-08.jpg", title: "Happy birthday", caption: "today is your day.", date: "31.12.2004" }
+  { file: "assets/photos/photo-01.jpg", title: "The beginning", caption: "a small beginning I'll always hold close.", date: "OUR MEMORY" },
+  { file: "assets/photos/photo-02.jpg", title: "That smile", caption: "one smile, and the whole day felt lighter.", date: "OUR MEMORY" },
+  { file: "assets/photos/photo-03.jpg", title: "Just us", caption: "nothing grand, just a moment I wanted to keep.", date: "OUR MEMORY" },
+  { file: "assets/photos/photo-04.jpg", title: "A favorite day", caption: "one of those days I wish I could revisit.", date: "OUR MEMORY" },
+  { file: "assets/photos/photo-05.jpg", title: "Little things", caption: "the little details I never want to forget.", date: "OUR MEMORY" },
+  { file: "assets/photos/photo-06.jpg", title: "With you", caption: "even an ordinary day feels softer with you.", date: "OUR MEMORY" },
+  { file: "assets/photos/photo-07.jpg", title: "Still choosing you", caption: "through every chapter, I choose you.", date: "OUR MEMORY" },
+  { file: "assets/photos/photo-08.jpg", title: "Happy birthday", caption: "celebrating the person who makes my days brighter.", date: "31.12.2004" }
 ];
 
 const letterText = `Dinda,
@@ -161,6 +161,32 @@ siteNavigation.querySelectorAll("a").forEach(link => link.addEventListener("clic
   siteNavigation.classList.remove("open");
 }));
 
+const navigationLinks = [...siteNavigation.querySelectorAll("a[href^='#']")];
+const sectionNavigationObserver = new IntersectionObserver(entries => {
+  const visibleSections = entries.filter(entry => entry.isIntersecting);
+  if (!visibleSections.length) return;
+
+  const activeSection = visibleSections.reduce((closest, entry) =>
+    Math.abs(entry.boundingClientRect.top - innerHeight * .3) <
+      Math.abs(closest.boundingClientRect.top - innerHeight * .3)
+      ? entry
+      : closest
+  );
+
+  navigationLinks.forEach(link => {
+    if (link.hash === `#${activeSection.target.id}`) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}, { rootMargin: "-25% 0px -65% 0px", threshold: 0 });
+
+navigationLinks.forEach(link => {
+  const section = document.querySelector(link.hash);
+  if (section) sectionNavigationObserver.observe(section);
+});
+
 function setMusicUI(playing) {
   musicToggle.textContent = playing ? "Ⅱ" : "▶";
   musicToggle.setAttribute("aria-label", playing ? "Pause music" : "Play music");
@@ -248,7 +274,9 @@ const counter = document.getElementById("memoryCounter");
 let current = 0;
 
 function photoPlaceholder(index) {
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800"><rect width="600" height="800" fill="#292127"/><text x="50%" y="46%" text-anchor="middle" fill="#d99aa8" font-family="Georgia" font-size="42">PHOTO ${String(index + 1).padStart(2, "0")}</text><text x="50%" y="53%" text-anchor="middle" fill="#a99ba0" font-family="Arial" font-size="18">replace photo-${String(index + 1).padStart(2, "0")}.jpg</text></svg>`)}`;
+  const number = String(index + 1).padStart(2, "0");
+  const title = memories[index].title;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800"><defs><linearGradient id="wash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff8ee"/><stop offset=".52" stop-color="#fcecef"/><stop offset="1" stop-color="#f7d6df"/></linearGradient><linearGradient id="frame" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffdf9"/><stop offset="1" stop-color="#fff6f2"/></linearGradient></defs><rect width="600" height="800" fill="url(#wash)"/><circle cx="80" cy="110" r="105" fill="#fff" opacity=".32"/><circle cx="550" cy="520" r="145" fill="#efa8bc" opacity=".12"/><rect x="54" y="62" width="492" height="676" rx="5" fill="url(#frame)" stroke="#c98298" stroke-opacity=".28" stroke-width="2"/><path d="M84 92h50M84 92v50M516 92h-50M516 92v50M84 708h50M84 708v-50M516 708h-50M516 708v-50" fill="none" stroke="#c98298" stroke-opacity=".38" stroke-width="2"/><text x="300" y="325" text-anchor="middle" fill="#c98298" font-family="Georgia,serif" font-size="94">♡</text><path d="M218 375h164" stroke="#c98298" stroke-opacity=".35"/><text x="300" y="423" text-anchor="middle" fill="#8a6672" font-family="Georgia,serif" font-size="27" font-style="italic">${title}</text><text x="300" y="680" text-anchor="middle" fill="#8a6672" font-family="Arial,sans-serif" font-size="13" letter-spacing="4">A MEMORY OF US</text><text x="300" y="711" text-anchor="middle" fill="#c98298" font-family="monospace" font-size="12" letter-spacing="3">${number} / 08</text></svg>`)}`;
 }
 
 memories.forEach((m, i) => {
@@ -363,19 +391,19 @@ document.getElementById("downloadMemory").addEventListener("click", async () => 
   const ctx = canvas.getContext("2d");
 
   // paper
-  ctx.fillStyle = "#f4eee8";
+  ctx.fillStyle = "#FFF8EE";
   ctx.fillRect(0,0,1800,2400);
 
   // subtle film background
   const grad = ctx.createRadialGradient(900,800,50,900,1000,1500);
-  grad.addColorStop(0,"rgba(217,154,168,.11)");
-  grad.addColorStop(1,"rgba(40,25,31,.02)");
+  grad.addColorStop(0,"rgba(239,168,188,.16)");
+  grad.addColorStop(1,"rgba(201,130,152,.025)");
   ctx.fillStyle = grad;
   ctx.fillRect(0,0,1800,2400);
 
   // photo frame
   const x = 120, y = 150, w = 1560, h = 1620;
-  ctx.fillStyle = "#1c1719";
+  ctx.fillStyle = "#FCECEF";
   ctx.fillRect(x,y,w,h);
 
   // cover image with crop
@@ -392,9 +420,9 @@ document.getElementById("downloadMemory").addEventListener("click", async () => 
     ctx.drawImage(img,dx,dy,dw,dh);
     ctx.restore();
   } else {
-    ctx.fillStyle="#30262a";
+    ctx.fillStyle="#F7D6DF";
     ctx.fillRect(x,y,w,h);
-    ctx.fillStyle="#f4eee8";
+    ctx.fillStyle="#5B3945";
     ctx.font="50px Georgia";
     ctx.textAlign="center";
     ctx.fillText("Add your photo",900,950);
@@ -407,25 +435,25 @@ document.getElementById("downloadMemory").addEventListener("click", async () => 
   ctx.fillText(m.date, 1600, 1705);
 
   // caption
-  ctx.fillStyle = "#24191d";
+  ctx.fillStyle = "#5B3945";
   ctx.textAlign = "left";
   ctx.font = "500 68px Georgia";
   ctx.fillText(m.title, 120, 1880);
-  ctx.fillStyle = "#765f66";
+  ctx.fillStyle = "#8A6672";
   ctx.font = "32px Arial";
   wrapText(ctx, m.caption, 120, 1950, 1500, 48);
 
   // footer
-  ctx.fillStyle = "#9a6c77";
+  ctx.fillStyle = "#C98298";
   ctx.font = "28px monospace";
   ctx.letterSpacing = "4px";
   ctx.fillText("MUHAMMAD FAUZIA  ×  DINDA KHARNITA",120,2250);
-  ctx.fillStyle = "#9b8a8f";
+  ctx.fillStyle = "#8A6672";
   ctx.font = "24px monospace";
   ctx.fillText("A LITTLE STORY  ·  MADE FOR YOU",120,2295);
 
   // film border
-  ctx.strokeStyle = "rgba(70,50,55,.18)";
+  ctx.strokeStyle = "rgba(150,100,100,.22)";
   ctx.lineWidth = 4;
   ctx.strokeRect(55,55,1690,2290);
 

@@ -28,6 +28,8 @@ Rename foto menjadi:
 
 Taruh semuanya di `assets/photos/`.
 
+Folder `assets/photos/` menyertakan slot foto kosong. Ganti masing-masing slot dengan foto kenangan milikmu menggunakan nama file yang sama agar foto tampil di hero dan galeri.
+
 PNG HD yang dihasilkan website berukuran 1800 × 2400 px.
 
 ## Musik
