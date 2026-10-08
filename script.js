@@ -9,9 +9,7 @@ const memories = [
   { file: "assets/photos/photo-08.jpg", title: "Happy birthday", caption: "celebrating the person who makes my days brighter.", date: "31.12.2004" }
 ];
 
-const letterText = `Dinda,
-
-Selamat ulang tahun.
+const letterText = `Selamat ulang tahun.
 
 Aku mungkin tidak selalu pandai mengatakan apa yang aku rasakan secara langsung, jadi kali ini aku ingin menuliskannya di sini.
 
@@ -22,9 +20,7 @@ Aku tidak tahu akan sejauh apa perjalanan kita nanti, tapi untuk sekarang, aku c
 I'm really happy that I met you.
 
 Happy birthday, Dinda.
-I love you.
-
-— Fauzia`;
+I love you.`;
 const opening = document.getElementById("opening");
 const mainContent = document.getElementById("mainContent");
 const accessStep = document.getElementById("accessStep");
@@ -113,38 +109,60 @@ codeDigits.forEach((input, index) => {
 });
 
 function openDashboard() {
-  opening.classList.add("hidden");
-  mainContent.classList.remove("hidden");
-  document.body.classList.remove("locked");
-  window.scrollTo(0, 0);
-  window.setTimeout(() => {
-    revealAllVisible();
-    updateMemory();
-  }, 150);
+  const revealDashboard = () => {
+    opening.classList.add("hidden");
+    opening.classList.remove("opening-leave", "access-success");
+    mainContent.classList.remove("hidden");
+    mainContent.classList.add("dashboard-enter");
+    document.body.classList.remove("locked");
+    window.scrollTo(0, 0);
+    window.setTimeout(() => {
+      mainContent.classList.remove("dashboard-enter");
+      revealAllVisible();
+      updateMemory();
+    }, 950);
+  };
+
+  if (opening.classList.contains("access-success")) {
+    opening.classList.add("opening-leave");
+    window.setTimeout(revealDashboard, 650);
+    return;
+  }
+  revealDashboard();
 }
 
+let pinFeedbackInProgress = false;
 codeForm.addEventListener("submit", event => {
   event.preventDefault();
+  if (pinFeedbackInProgress) return;
   const enteredCode = codeDigits.map(input => input.value).join("");
   if (enteredCode !== "3112") {
-    codeError.textContent = "Not quite...\nTry the code I gave you.";
-    codeInputs.classList.remove("shake");
+    pinFeedbackInProgress = true;
+    codeError.textContent = "Not quite...\nTry again, sayang.";
+    codeError.classList.add("visible");
+    codeInputs.classList.remove("shake", "wrong");
     void codeInputs.offsetWidth;
-    codeInputs.classList.add("shake");
-    const firstEmpty = codeDigits.find(input => !input.value);
-    (firstEmpty || codeDigits[0]).focus();
-    window.setTimeout(() => codeInputs.classList.remove("shake"), 500);
+    codeInputs.classList.add("shake", "wrong");
+    window.setTimeout(() => {
+      codeInputs.classList.remove("shake", "wrong");
+      codeDigits.forEach(input => { input.value = ""; });
+      codeDigits[0].focus();
+      pinFeedbackInProgress = false;
+    }, 520);
     return;
   }
 
   codeError.textContent = "";
+  codeError.classList.remove("visible");
+  codeInputs.classList.add("success");
+  opening.classList.add("access-success");
   sessionStorage.setItem("birthdayUnlocked", "true");
   codeStep.classList.add("hidden");
   grantedStep.classList.remove("hidden");
   window.setTimeout(() => {
     grantedStep.classList.add("hidden");
     openDashboard();
-  }, 1500);
+  }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 900 : 3300);
 });
 
 const navToggle = document.getElementById("navToggle");
@@ -491,14 +509,34 @@ const letterModal = document.getElementById("letterModal");
 const envelope = document.getElementById("openLetter");
 const typedLetter = document.getElementById("typedLetter");
 let typed = false;
-envelope.addEventListener("click", () => {
-  envelope.classList.add("open");
+let letterOpening = false;
+function openLetterModal() {
   letterModal.classList.add("open");
-  letterModal.setAttribute("aria-hidden","false");
+  letterModal.setAttribute("aria-hidden", "false");
   if (!typed) {
     typeLetter();
     typed = true;
   }
+}
+envelope.addEventListener("click", () => {
+  if (letterOpening) return;
+  if (envelope.classList.contains("open")) {
+    openLetterModal();
+    return;
+  }
+  letterOpening = true;
+  envelope.classList.add("opening");
+  window.setTimeout(() => {
+    envelope.classList.remove("opening");
+    envelope.classList.add("open");
+    window.setTimeout(() => {
+      envelope.classList.remove("open");
+      window.setTimeout(() => {
+        openLetterModal();
+        letterOpening = false;
+      }, 650);
+    }, 850);
+  }, 500);
 });
 document.querySelectorAll('[data-close="letter"]').forEach(el => el.addEventListener("click", () => {
   letterModal.classList.remove("open");

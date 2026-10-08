@@ -48,6 +48,7 @@
             <input class="code-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 2" required>
             <input class="code-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 3" required>
             <input class="code-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 4" required>
+            <span class="pin-sparkles" aria-hidden="true"><i>♡</i><i>✦</i><i>✿</i><i>♡</i><i>✧</i></span>
           </div>
           <p class="code-error" id="codeError" role="alert" aria-live="assertive"></p>
           <button class="primary-btn code-submit" type="submit">Unlock My Surprise <span class="btn-heart">♡</span></button>
@@ -61,7 +62,11 @@
         <div class="unlock-mark" aria-hidden="true"><span>♡</span></div>
         <p class="access-kicker">ACCESS GRANTED</p>
         <h1 class="access-title">Welcome,<br><em>Dinda.</em></h1>
-        <p class="access-copy">Your little world is opening.</p>
+        <p class="success-message">Silakan lanjut ya, sayang.</p>
+      </div>
+      <div class="success-particles" aria-hidden="true">
+        <i>✿</i><i>♡</i><i>✦</i><i>❀</i><i>♡</i><i>✧</i><i>✿</i><i>♡</i>
+        <i>✦</i><i>❀</i><i>♡</i><i>✧</i><i>✿</i><i>♡</i><i>✦</i><i>❀</i>
       </div>
     </div>
   </section>
@@ -148,35 +153,46 @@
           <p class="vintage-note-date">13 • 12 • 2025</p>
           <p class="vintage-note-signature">the beginning of our story</p>
         </article>
-        <div class="timeline-list">
-          <article class="timeline-item reveal">
-            <span class="time">VISCO 2025</span>
-            <div>
-              <h3>VISCO 2025</h3>
-              <p>Where it all started.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <span class="time">13.12.2025</span>
-            <div>
-              <h3>The Beginning</h3>
-              <p>From getting to know you, to realizing how important you became.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <span class="time">31 DECEMBER</span>
-            <div>
-              <h3>Your birthday</h3>
-              <p>Today is your day.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <span class="time">NOW</span>
-            <div>
-              <h3>Still here.</h3>
-              <p>Still choosing you. Still making memories.</p>
-            </div>
-          </article>
+        <div class="timeline-paper reveal">
+          <span class="timeline-paper-flower" aria-hidden="true">✿</span>
+          <span class="timeline-paper-date">13 • 12 • 2025</span>
+          <p class="timeline-paper-copy">Somewhere between a simple meeting<br>and little conversations,<br>we became us.</p>
+          <span class="timeline-paper-end">where our story quietly started</span>
+          <svg class="timeline-bouquet" viewBox="0 0 360 230" role="img" aria-label="A hand-tied bouquet of soft pink flowers">
+            <defs>
+              <linearGradient id="bouquet-wrap" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fffdf7"/>
+                <stop offset="1" stop-color="#f2d9d8"/>
+              </linearGradient>
+              <g id="bouquet-flower">
+                <ellipse cy="-13" rx="7" ry="12" fill="#f1b9c6"/>
+                <ellipse cy="-13" rx="7" ry="12" fill="#f7d7dd" transform="rotate(60)"/>
+                <ellipse cy="-13" rx="7" ry="12" fill="#eaa5b6" transform="rotate(120)"/>
+                <ellipse cy="-13" rx="7" ry="12" fill="#f7d7dd" transform="rotate(180)"/>
+                <ellipse cy="-13" rx="7" ry="12" fill="#eaa5b6" transform="rotate(240)"/>
+                <ellipse cy="-13" rx="7" ry="12" fill="#f7d7dd" transform="rotate(300)"/>
+                <circle r="5" fill="#c98272"/>
+              </g>
+            </defs>
+            <g fill="none" stroke="#829477" stroke-linecap="round" stroke-width="3">
+              <path d="M180 204 112 72M180 204 148 47M180 204 183 60M180 204 220 50M180 204 252 78M180 204 83 111M180 204 277 115"/>
+            </g>
+            <g fill="#9eae91">
+              <path d="M143 142q-38-37-49-10 15 25 49 10ZM154 166q-35-30-45-5 19 23 45 5ZM212 145q39-35 49-8-17 25-49 8ZM198 171q38-31 48-4-20 24-48 4ZM171 119q-25-40-42-19 7 28 42 19ZM193 126q24-39 42-18-7 29-42 18Z"/>
+            </g>
+            <g>
+              <use href="#bouquet-flower" transform="translate(111 67) scale(.9)"/>
+              <use href="#bouquet-flower" transform="translate(149 42) scale(1.02)"/>
+              <use href="#bouquet-flower" transform="translate(184 55) scale(.84)"/>
+              <use href="#bouquet-flower" transform="translate(222 45) scale(1.04)"/>
+              <use href="#bouquet-flower" transform="translate(254 73) scale(.88)"/>
+              <use href="#bouquet-flower" transform="translate(82 106) scale(.73)"/>
+              <use href="#bouquet-flower" transform="translate(278 109) scale(.75)"/>
+            </g>
+            <path d="m113 143 66 63 69-65-21 68h-91z" fill="url(#bouquet-wrap)" stroke="#d8aab0" stroke-width="1.5"/>
+            <path d="m164 179 16 27 17-27-17 10z" fill="#c98298"/>
+            <path d="M180 205v18m0-9-13 9m13-9 13 9" fill="none" stroke="#c98298" stroke-linecap="round" stroke-width="2"/>
+          </svg>
         </div>
       </div>
     </section>
@@ -247,12 +263,17 @@
         <p class="eyebrow reveal">A LETTER FOR YOU</p>
         <h2 class="display reveal">There are things<br>I'd rather <em>write.</em></h2>
         <button class="envelope reveal" id="openLetter" aria-label="Open letter">
+          <span class="envelope-address" aria-hidden="true">for Dinda ♡</span>
           <div class="envelope-top"></div>
           <div class="letter-paper">
             <span>For Dinda</span>
             <small>open this when you're ready</small>
           </div>
           <div class="envelope-bottom"></div>
+          <span class="envelope-seal" aria-hidden="true">♡</span>
+          <span class="envelope-petal petal-one" aria-hidden="true">✿</span>
+          <span class="envelope-petal petal-two" aria-hidden="true">✦</span>
+          <span class="envelope-petal petal-three" aria-hidden="true">♡</span>
         </button>
       </div>
     </section>
