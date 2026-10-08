@@ -23,53 +23,36 @@
     <div class="access-orbit access-orbit-one" aria-hidden="true"></div>
     <div class="access-orbit access-orbit-two" aria-hidden="true"></div>
 
-    <div class="access-step" id="scanStep">
+    <div class="access-step" id="accessStep">
       <div class="access-content">
         <p class="eyebrow access-brand">A PRIVATE LITTLE WORLD</p>
         <p class="access-kicker">SECRET ACCESS</p>
-        <h1 class="access-title">Something special<br><em>is waiting for you.</em></h1>
-        <p class="access-copy">A little story, made just for you.</p>
-        <p class="scan-instruction">Scan to unlock</p>
-        <div class="scanner-frame" id="scannerFrame" aria-label="QR code scanner">
-          <span class="scanner-corner corner-top-left"></span>
-          <span class="scanner-corner corner-top-right"></span>
-          <span class="scanner-corner corner-bottom-left"></span>
-          <span class="scanner-corner corner-bottom-right"></span>
-          <svg class="scanner-mark" viewBox="0 0 72 72" aria-hidden="true">
-            <path d="M8 28V12a4 4 0 0 1 4-4h16M44 8h16a4 4 0 0 1 4 4v16M64 44v16a4 4 0 0 1-4 4H44M28 64H12a4 4 0 0 1-4-4V44" />
-            <path d="M24 24h8v8h-8zM40 24h8v8h-8zM24 40h8v8h-8zM40 40h8v8h-8z" />
-          </svg>
-          <span class="scan-beam" aria-hidden="true"></span>
-          <video class="scanner-video" id="scannerVideo" playsinline muted aria-label="Camera QR preview"></video>
-        </div>
-        <p class="access-tagline">Your story starts here.</p>
-        <p class="scan-result hidden" id="scanResult"><span>SCAN COMPLETE</span><small>Access verified.</small></p>
-        <div class="scanner-actions">
-          <button class="primary-btn scanner-camera" id="cameraScanButton" type="button">Use camera scanner</button>
-          <button class="secondary-btn scanner-demo" id="demoScanButton" type="button">Continue with demo scan</button>
-        </div>
-        <p class="scanner-status" id="scannerStatus" role="status" aria-live="polite">Your camera stays on this device.</p>
-        <p class="access-footnote">A playful little gate, made for the surprise.</p>
+        <h1 class="access-title">I made something<br><em>for Dinda.</em></h1>
+        <p class="access-copy">Some things are meant to be discovered.</p>
+        <button class="primary-btn access-enter" id="enterSecret" type="button">
+          <span>Enter My Secret</span><span class="btn-heart" aria-hidden="true">♡</span>
+        </button>
+        <p class="access-footnote">Made with love, by Muhammad Fauzia.</p>
       </div>
     </div>
 
     <div class="access-step hidden" id="codeStep">
       <div class="access-content code-content">
-        <p class="eyebrow access-brand">SCAN COMPLETE</p>
-        <p class="access-kicker">ONE LAST SECRET</p>
+        <p class="eyebrow access-brand">A PRIVATE LITTLE WORLD</p>
+        <p class="access-kicker">ONE LAST LITTLE SECRET</p>
         <h1 class="access-title">Enter your<br><em>secret code.</em></h1>
-        <p class="access-copy">One last little key, and the story is yours.</p>
+        <p class="access-copy">Some things are meant to be discovered.</p>
         <form class="secret-code-form" id="secretCodeForm">
           <div class="code-inputs" id="codeInputs" aria-label="Four digit secret code">
-            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="Secret code digit 1">
-            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 2">
-            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 3">
-            <input class="code-digit" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 4">
+            <input class="code-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="Secret code digit 1" required>
+            <input class="code-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 2" required>
+            <input class="code-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 3" required>
+            <input class="code-digit" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Secret code digit 4" required>
           </div>
-          <p class="code-error" id="codeError" role="alert" aria-live="polite"></p>
+          <p class="code-error" id="codeError" role="alert" aria-live="assertive"></p>
           <button class="primary-btn code-submit" type="submit">Unlock My Surprise <span class="btn-heart">♡</span></button>
         </form>
-        <p class="access-footnote">A playful little gate, made for the surprise.</p>
+        <p class="access-footnote">A little key to your own corner of the world.</p>
       </div>
     </div>
 
@@ -95,6 +78,7 @@
       <nav class="site-navigation" id="siteNavigation" aria-label="Main navigation">
         <a href="#birthday">Birthday</a>
         <a href="#story">Our Story</a>
+        <a href="#timeline">Timeline</a>
         <a href="#memories">Memories</a>
         <a href="#letter">The Letter</a>
         <a href="#music">Music</a>
@@ -103,26 +87,36 @@
     </header>
     <!-- Hero -->
     <section class="hero section" id="birthday">
-      <div class="hero-bg"></div>
-      <div class="hero-inner">
-        <p class="eyebrow reveal">31 · 12 · 2004</p>
-        <h2 class="hero-title reveal">Happy Birthday,<br><em>Dinda.</em></h2>
-        <p class="hero-sub reveal">Across every little moment that led us here, I made this corner of the internet just for you.</p>
-        <div class="hero-date reveal">31 DECEMBER</div>
-        <div class="birthday-countdown reveal" aria-label="Countdown ulang tahun Dinda">
-          <p class="countdown-label">COUNTING DOWN TO YOUR DAY</p>
-          <div class="countdown-units">
-            <div class="countdown-unit"><span id="countdownDays">000</span><small>HARI</small></div>
-            <span class="countdown-divider">:</span>
-            <div class="countdown-unit"><span id="countdownHours">00</span><small>JAM</small></div>
-            <span class="countdown-divider">:</span>
-            <div class="countdown-unit"><span id="countdownMinutes">00</span><small>MENIT</small></div>
-            <span class="countdown-divider">:</span>
-            <div class="countdown-unit"><span id="countdownSeconds">00</span><small>DETIK</small></div>
+      <div class="hero-layout">
+        <div class="hero-inner">
+          <p class="eyebrow reveal">31 · 12 · 2004</p>
+          <h2 class="hero-title reveal">Happy Birthday,<br><em>Dinda.</em></h2>
+          <p class="hero-sub reveal">Today is about you. I made this little corner of the world to celebrate every part of you I love.</p>
+          <div class="hero-date reveal">31 DECEMBER 2004</div>
+          <div class="birthday-countdown reveal" aria-label="Countdown ulang tahun Dinda">
+            <p class="countdown-label">COUNTING DOWN TO YOUR DAY</p>
+            <div class="countdown-units">
+              <div class="countdown-unit"><span id="countdownDays">000</span><small>HARI</small></div>
+              <span class="countdown-divider">:</span>
+              <div class="countdown-unit"><span id="countdownHours">00</span><small>JAM</small></div>
+              <span class="countdown-divider">:</span>
+              <div class="countdown-unit"><span id="countdownMinutes">00</span><small>MENIT</small></div>
+              <span class="countdown-divider">:</span>
+              <div class="countdown-unit"><span id="countdownSeconds">00</span><small>DETIK</small></div>
+            </div>
+            <p class="countdown-message" id="countdownMessage" aria-live="polite"></p>
           </div>
-          <p class="countdown-message" id="countdownMessage" aria-live="polite"></p>
+          <div class="scroll-hint reveal"><span></span> Scroll slowly</div>
         </div>
-        <div class="scroll-hint reveal"><span></span> Scroll slowly</div>
+        <figure class="hero-photo-card reveal">
+          <div class="hero-photo-frame">
+            <img src="assets/photos/photo-01.jpg" alt="A favorite memory of Dinda and Fauzia" onerror="this.hidden=true">
+            <span class="hero-photo-placeholder" aria-hidden="true">A LITTLE PIECE OF US</span>
+            <span class="hero-photo-index">01 / 08</span>
+          </div>
+          <figcaption>One day, one moment, one little story.</figcaption>
+          <span class="hero-photo-date">DECEMBER · 2025</span>
+        </figure>
       </div>
     </section>
 
@@ -134,7 +128,7 @@
         <h2 class="display reveal">Sometimes,<br>something beautiful<br><em>begins unexpectedly.</em></h2>
         <div class="story-copy reveal">
           <p>Our story began with something completely unexpected: a project called <strong>VISCO 2025</strong>.</p>
-          <p>I was there as a Brand Ambassador representing <strong>Computer Engineering Technology</strong>. Somewhere between the busy days, little conversations, and moments that seemed ordinary, I started getting closer to you.</p>
+          <p>I was there as a Brand Ambassador representing <strong>Teknologi Rekayasa Komputer</strong>. Somewhere between the busy days, little conversations, and moments that seemed ordinary, I started getting closer to you.</p>
           <p>What began as a small project slowly became one of the most meaningful stories in my life.</p>
         </div>
         <div class="story-date reveal"><span>THE DAY WE BECAME US</span><strong>13 December 2025</strong></div>
@@ -142,31 +136,31 @@
     </section>
 
     <!-- Timeline -->
-    <section class="timeline section">
+    <section class="timeline section" id="timeline">
       <div class="section-number">02</div>
       <div class="narrow">
         <p class="eyebrow reveal">OUR LITTLE TIMELINE</p>
         <h2 class="display reveal">From that moment<br>to <em>us.</em></h2>
         <div class="timeline-list">
           <article class="timeline-item reveal">
-            <span class="time">2025</span>
+            <span class="time">VISCO 2025</span>
             <div>
               <h3>VISCO 2025</h3>
-              <p>Where our paths started getting closer.</p>
+              <p>Where it all started.</p>
             </div>
           </article>
           <article class="timeline-item reveal">
             <span class="time">13.12.2025</span>
             <div>
-              <h3>The day we became us</h3>
-              <p>A date I'll always remember.</p>
+              <h3>The Beginning</h3>
+              <p>From getting to know you, to realizing how important you became.</p>
             </div>
           </article>
           <article class="timeline-item reveal">
-            <span class="time">31.12.25</span>
+            <span class="time">31 DECEMBER</span>
             <div>
               <h3>Your birthday</h3>
-              <p>The first birthday of yours after we became “us”.</p>
+              <p>Today is your day.</p>
             </div>
           </article>
           <article class="timeline-item reveal">
@@ -209,10 +203,10 @@
         <p class="eyebrow reveal">LITTLE THINGS</p>
         <h2 class="display reveal">Things I quietly<br><em>love about you.</em></h2>
         <div class="things-grid">
-          <div class="thing reveal"><span>01</span><h3>Your smile</h3><p>It has a way of making ordinary days feel lighter.</p></div>
-          <div class="thing reveal"><span>02</span><h3>Your presence</h3><p>Sometimes I don't need anything else. Just you being there.</p></div>
-          <div class="thing reveal"><span>03</span><h3>The little things</h3><p>The tiny moments that somehow become my favorite memories.</p></div>
-          <div class="thing reveal"><span>04</span><h3>You being you</h3><p>No perfect version. Just you. And that's more than enough.</p></div>
+          <div class="thing reveal"><span>01</span><h3>Your smile.</h3><p>The way you make ordinary moments feel special.</p></div>
+          <div class="thing reveal"><span>02</span><h3>Your little expressions.</h3><p>Little things you do that always stay on my mind.</p></div>
+          <div class="thing reveal"><span>03</span><h3>Your presence.</h3><p>How comfortable it feels to simply be around you.</p></div>
+          <div class="thing reveal"><span>04</span><h3>Simply being you.</h3><p>You make this story feel like ours.</p></div>
         </div>
       </div>
     </section>
@@ -224,12 +218,17 @@
           <div class="vinyl-label">S</div>
         </div>
         <div>
-          <p class="eyebrow">OUR SONG</p>
+          <p class="eyebrow">NOW PLAYING</p>
           <h2>Silence</h2>
           <p class="artist">Marshmello & Khalid</p>
           <p class="song-note">A song that belongs to this little chapter of us.</p>
+          <div class="music-progress">
+            <input id="musicProgress" type="range" min="0" max="100" value="0" aria-label="Song progress">
+            <div class="music-time"><span id="musicCurrentTime">0:00</span><span id="musicDuration">0:00</span></div>
+          </div>
         </div>
         <button class="music-toggle" id="musicToggle" aria-label="Play or pause music">▶</button>
+        <label class="music-volume">VOLUME <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Music volume"></label>
       </div>
     </section>
 
@@ -243,7 +242,7 @@
           <div class="envelope-top"></div>
           <div class="letter-paper">
             <span>For Dinda</span>
-            <small>tap to open</small>
+            <small>open this when you're ready</small>
           </div>
           <div class="envelope-bottom"></div>
         </button>
@@ -257,6 +256,7 @@
         <p class="eyebrow reveal">ALWAYS, YOURS</p>
         <h2 class="display reveal">If I could choose again,<br><em>I'd still choose you.</em></h2>
         <p class="final-copy reveal">Happy Birthday, Dinda.</p>
+        <p class="final-thanks reveal">Thank you for being part of my story.</p>
         <p class="signature reveal">— Muhammad Fauzia</p>
         <div class="final-date reveal">31 DECEMBER 2004</div>
       </div>

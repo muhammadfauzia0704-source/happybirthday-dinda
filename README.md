@@ -6,7 +6,9 @@ Website ulang tahun personal dengan gaya cute + romantic + elegant + cinematic +
 
 - `index.html` — struktur website
 - `styles.css` — seluruh styling dan animasi
-- `script.js` — slider foto, modal, download PNG HD, surat, musik
+- `script.js` — secret access, countdown, slider foto, modal, download PNG HD, surat, musik
+- `qr-code.html` — halaman untuk membuat dan mengunduh QR menuju website
+- `qr-code.js` — logika QR pada halaman tersebut
 - `assets/photos/` — masukkan 8 foto
 - `assets/music/silence.mp3` — masukkan file audio yang kamu miliki/hak gunakan
 - `.github/workflows/pages.yml` — deploy otomatis ke GitHub Pages
@@ -34,7 +36,7 @@ Masukkan file musik yang kamu miliki/hak gunakan ke:
 
 `assets/music/silence.mp3`
 
-Website sengaja tidak menyertakan lagu komersial. Browser juga dapat memblokir autoplay sebelum pengguna melakukan interaksi, sehingga musik dimulai ketika tombol "Open our story" diklik.
+Website sengaja tidak menyertakan lagu komersial. Musik baru diputar setelah tombol play ditekan di dashboard.
 
 ## Menjalankan lokal
 
@@ -59,3 +61,7 @@ Kalau nama repository kamu adalah `USERNAME.github.io`, URL-nya menjadi:
 `https://USERNAME.github.io/`
 
 Semua teks, caption, warna, dan isi surat bisa diubah langsung dari `script.js` dan `index.html`.
+
+Halaman QR setelah deployment tersedia di `https://muhammadfauzia0704-source.github.io/happybirthday-dinda/qr-code.html`. QR mengarah ke website GitHub Pages dan menggunakan QRCode.js dari CDN untuk membuat PNG.
+
+Secret access divalidasi sepenuhnya di browser dan menyimpan status buka hanya di `sessionStorage`; ini adalah gerbang kejutan, bukan sistem keamanan.

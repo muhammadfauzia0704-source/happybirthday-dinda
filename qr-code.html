@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#140b10">
+  <meta name="description" content="A little birthday surprise for Dinda.">
+  <title>Something is waiting for you — For Dinda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="qr-page">
+    <section class="qr-card">
+      <p class="eyebrow">A PRIVATE LITTLE WORLD</p>
+      <h1>Scan <em>this.</em></h1>
+      <p>Something is waiting for you.</p>
+      <div class="qr-code-frame" id="qrCode" role="img" aria-label="QR code linking to Dinda's birthday website"></div>
+      <p class="qr-status" id="qrStatus" role="status" aria-live="polite">Preparing your little surprise...</p>
+      <button class="primary-btn qr-download" id="downloadQr" type="button" disabled>Download QR</button>
+      <a class="qr-url" href="https://muhammadfauzia0704-source.github.io/happybirthday-dinda/">Open the birthday website</a>
+      <a class="qr-back" href="index.html">Back to the website</a>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="qr-code.js" defer></script>
+</body>
+</html>
