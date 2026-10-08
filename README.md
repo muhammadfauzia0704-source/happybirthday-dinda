@@ -36,7 +36,7 @@ Masukkan file musik yang kamu miliki/hak gunakan ke:
 
 `assets/music/silence.mp3`
 
-Player menggunakan file `Marshmello_Khalid_-_Silence_(mp3.pm).mp3` di folder utama project. Musik baru diputar setelah tombol play ditekan di dashboard.
+Player menggunakan file `assets/music/silence.mp3` (lagu Silence dari file yang disediakan). Musik baru diputar setelah tombol play ditekan di dashboard.
 
 ## Menjalankan lokal
 
