@@ -161,37 +161,64 @@
           <svg class="timeline-bouquet" viewBox="0 0 360 230" role="img" aria-label="A hand-tied bouquet of soft pink flowers">
             <defs>
               <linearGradient id="bouquet-wrap" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#fffdf7"/>
-                <stop offset="1" stop-color="#f2d9d8"/>
+                <stop offset="0" stop-color="#fffefa"/>
+                <stop offset=".55" stop-color="#fff5ef"/>
+                <stop offset="1" stop-color="#ead0d0"/>
               </linearGradient>
-              <g id="bouquet-flower">
-                <ellipse cy="-13" rx="7" ry="12" fill="#f1b9c6"/>
-                <ellipse cy="-13" rx="7" ry="12" fill="#f7d7dd" transform="rotate(60)"/>
-                <ellipse cy="-13" rx="7" ry="12" fill="#eaa5b6" transform="rotate(120)"/>
-                <ellipse cy="-13" rx="7" ry="12" fill="#f7d7dd" transform="rotate(180)"/>
-                <ellipse cy="-13" rx="7" ry="12" fill="#eaa5b6" transform="rotate(240)"/>
-                <ellipse cy="-13" rx="7" ry="12" fill="#f7d7dd" transform="rotate(300)"/>
-                <circle r="5" fill="#c98272"/>
+              <radialGradient id="rose-petal" cx=".36" cy=".28" r=".8">
+                <stop offset="0" stop-color="#fff0ed"/>
+                <stop offset=".62" stop-color="#f4c3cb"/>
+                <stop offset="1" stop-color="#df91a5"/>
+              </radialGradient>
+              <radialGradient id="rose-heart" cx=".35" cy=".3" r=".8">
+                <stop offset="0" stop-color="#f7dcab"/>
+                <stop offset="1" stop-color="#c98272"/>
+              </radialGradient>
+              <g id="bouquet-bloom">
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)"/>
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)" transform="rotate(45)"/>
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)" transform="rotate(90)"/>
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)" transform="rotate(135)"/>
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)" transform="rotate(180)"/>
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)" transform="rotate(225)"/>
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)" transform="rotate(270)"/>
+                <ellipse cy="-12" rx="6.5" ry="12" fill="url(#rose-petal)" transform="rotate(315)"/>
+                <circle r="5.2" fill="url(#rose-heart)"/>
+                <circle cx="-1.5" cy="-1.7" r="1.2" fill="#fff8df" opacity=".8"/>
+              </g>
+              <g id="bouquet-sprig" fill="none" stroke="#93a486" stroke-linecap="round">
+                <path d="M0 0Q-3-35-20-63" stroke-width="2"/>
+                <path d="M-10-30q-26-17-29 0 18 14 29 0ZM-16-45q-2-22 15-24 5 17-15 24Z" fill="#a9b699" stroke-width="1.4"/>
               </g>
             </defs>
-            <g fill="none" stroke="#829477" stroke-linecap="round" stroke-width="3">
-              <path d="M180 204 112 72M180 204 148 47M180 204 183 60M180 204 220 50M180 204 252 78M180 204 83 111M180 204 277 115"/>
-            </g>
-            <g fill="#9eae91">
-              <path d="M143 142q-38-37-49-10 15 25 49 10ZM154 166q-35-30-45-5 19 23 45 5ZM212 145q39-35 49-8-17 25-49 8ZM198 171q38-31 48-4-20 24-48 4ZM171 119q-25-40-42-19 7 28 42 19ZM193 126q24-39 42-18-7 29-42 18Z"/>
+            <g fill="none" stroke="#829477" stroke-linecap="round" stroke-width="2.3">
+              <path d="M180 214Q145 144 93 64M181 214Q155 126 129 44M181 214Q171 121 166 36M181 214Q190 120 202 43M181 214Q214 133 240 62M181 214Q133 160 72 106M181 214Q230 157 289 103M181 214Q157 161 142 87M181 214Q203 156 220 84"/>
             </g>
             <g>
-              <use href="#bouquet-flower" transform="translate(111 67) scale(.9)"/>
-              <use href="#bouquet-flower" transform="translate(149 42) scale(1.02)"/>
-              <use href="#bouquet-flower" transform="translate(184 55) scale(.84)"/>
-              <use href="#bouquet-flower" transform="translate(222 45) scale(1.04)"/>
-              <use href="#bouquet-flower" transform="translate(254 73) scale(.88)"/>
-              <use href="#bouquet-flower" transform="translate(82 106) scale(.73)"/>
-              <use href="#bouquet-flower" transform="translate(278 109) scale(.75)"/>
+              <use href="#bouquet-sprig" transform="translate(176 199) rotate(-32) scale(.8)"/>
+              <use href="#bouquet-sprig" transform="translate(187 203) rotate(44) scale(.82)"/>
+              <use href="#bouquet-sprig" transform="translate(165 195) rotate(-62) scale(.7)"/>
+              <use href="#bouquet-sprig" transform="translate(197 195) rotate(66) scale(.72)"/>
             </g>
-            <path d="m113 143 66 63 69-65-21 68h-91z" fill="url(#bouquet-wrap)" stroke="#d8aab0" stroke-width="1.5"/>
-            <path d="m164 179 16 27 17-27-17 10z" fill="#c98298"/>
-            <path d="M180 205v18m0-9-13 9m13-9 13 9" fill="none" stroke="#c98298" stroke-linecap="round" stroke-width="2"/>
+            <g fill="#829477" stroke="#71866f" stroke-width=".8">
+              <path d="M133 157Q91 130 85 151q19 24 48 6ZM153 177q-35-26-44-5 20 20 44 5ZM219 158q40-28 48-7-18 24-48 7ZM203 179q35-28 46-7-19 22-46 7ZM159 129q-23-38-39-24 9 27 39 24ZM198 132q25-39 40-21-9 27-40 21ZM125 123q-32-20-39 0 18 19 39 0ZM235 126q31-23 40-4-17 20-40 4Z"/>
+            </g>
+            <g opacity=".9">
+              <use href="#bouquet-bloom" transform="translate(92 60) scale(.9)"/>
+              <use href="#bouquet-bloom" transform="translate(129 39) scale(.92)"/>
+              <use href="#bouquet-bloom" transform="translate(166 31) scale(1.02)"/>
+              <use href="#bouquet-bloom" transform="translate(203 38) scale(.95)"/>
+              <use href="#bouquet-bloom" transform="translate(241 57) scale(.91)"/>
+              <use href="#bouquet-bloom" transform="translate(71 101) scale(.72)"/>
+              <use href="#bouquet-bloom" transform="translate(289 98) scale(.74)"/>
+              <use href="#bouquet-bloom" transform="translate(142 81) scale(.72)"/>
+              <use href="#bouquet-bloom" transform="translate(220 78) scale(.73)"/>
+            </g>
+            <path d="M104 133Q137 149 180 188Q223 149 256 133L233 253Q180 274 127 253Z" fill="url(#bouquet-wrap)" stroke="#d8aab0" stroke-width="1.5"/>
+            <path d="M104 133Q142 165 180 188L127 253ZM256 133Q218 165 180 188L233 253Z" fill="#f1d8d7" fill-opacity=".7" stroke="#ddbdba" stroke-width="1"/>
+            <path d="M142 204Q180 216 218 204L210 229Q180 238 150 229Z" fill="#d993a5" stroke="#c98298" stroke-width="1"/>
+            <path d="M180 232Q157 250 153 267Q174 261 181 240Q188 261 209 267Q205 249 180 232Z" fill="#c98298"/>
+            <path d="M118 151Q137 167 154 178M242 151Q224 168 207 178" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2"/>
           </svg>
         </div>
       </div>
@@ -264,6 +291,7 @@
         <h2 class="display reveal">There are things<br>I'd rather <em>write.</em></h2>
         <button class="envelope reveal" id="openLetter" aria-label="Open letter">
           <span class="envelope-address" aria-hidden="true">for Dinda ♡</span>
+          <span class="envelope-stamp" aria-hidden="true"><span>✿</span><small>WITH LOVE</small></span>
           <div class="envelope-top"></div>
           <div class="letter-paper">
             <span>For Dinda</span>
