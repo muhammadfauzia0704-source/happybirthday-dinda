@@ -177,7 +177,7 @@ musicToggle.addEventListener("click", async () => {
     } catch (error) {
       musicUnavailable = true;
       setMusicUI(false);
-      musicStatus.textContent = "add assets/music/silence.mp3";
+      musicStatus.textContent = "audio could not be played";
       console.warn("Music could not be played.", error);
     }
   } else {
@@ -217,9 +217,8 @@ bgMusic.addEventListener("loadedmetadata", updateMusicProgress);
 bgMusic.addEventListener("durationchange", updateMusicProgress);
 bgMusic.addEventListener("error", () => {
   musicUnavailable = true;
-  musicStatus.textContent = "add assets/music/silence.mp3";
   setMusicUI(false);
-  musicStatus.textContent = "add assets/music/silence.mp3";
+  musicStatus.textContent = "audio file unavailable";
 });
 
 // Cursor glow
