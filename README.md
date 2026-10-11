@@ -6,7 +6,7 @@ Website ulang tahun personal dengan gaya cute + romantic + elegant + cinematic +
 
 - `index.html` — struktur website
 - `styles.css` — seluruh styling dan animasi
-- `script.js` — secret access, countdown, slider foto, modal, download PNG HD, surat, musik
+- `script.js` — secret access, countdown, scrapbook memories, download PNG HD, surat, musik, and love-note interaction
 - `qr-code.html` — halaman untuk membuat dan mengunduh QR menuju website
 - `qr-code.js` — logika QR pada halaman tersebut
 - `assets/photos/` — masukkan 8 foto
@@ -30,7 +30,9 @@ Taruh semuanya di `assets/photos/`.
 
 Folder `assets/photos/` menyertakan slot foto kosong. Ganti masing-masing slot dengan foto kenangan milikmu menggunakan nama file yang sama agar foto tampil di hero dan galeri.
 
-PNG HD yang dihasilkan website berukuran 1800 × 2400 px.
+Album Our Story Scrapbook memuat delapan foto, navigasi thumbnail, previous/next, swipe di ponsel, detail kenangan, dan ekspor PNG HD berukuran 1800 × 2400 px. Tanggal, judul, caption, dan cerita masing-masing kenangan disimpan di array `memories` pada `script.js`; ubah nilai `DATE TO ADD` dan cerita netralnya sesuai detail yang ingin kamu bagikan. Tombol print mencetak foto dan caption yang sedang dipilih saja.
+
+Bagian Our Little Timeline di `index.html` menggunakan tiga tanggal/peristiwa yang sudah diketahui. Bagian Little Things About You memiliki 12 catatan yang dapat diedit pada array `reasons` di `script.js`.
 
 ## Musik
 
