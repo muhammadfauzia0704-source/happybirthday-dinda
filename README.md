@@ -6,7 +6,7 @@ Website ulang tahun personal dengan gaya cute + romantic + elegant + cinematic +
 
 - `index.html` — struktur website
 - `styles.css` — seluruh styling dan animasi
-- `script.js` — secret access, countdown, scrapbook memories, download PNG HD, surat, musik, and love-note interaction
+- `script.js` — secret access, countdown, scrapbook memories, love notes, timeline, and interactive keepsakes
 - `qr-code.html` — halaman untuk membuat dan mengunduh QR menuju website
 - `qr-code.js` — logika QR pada halaman tersebut
 - `assets/photos/` — masukkan 8 foto
@@ -33,6 +33,18 @@ Folder `assets/photos/` menyertakan slot foto kosong. Ganti masing-masing slot d
 Album Our Story Scrapbook memuat delapan foto, navigasi thumbnail, previous/next, swipe di ponsel, detail kenangan, dan ekspor PNG HD berukuran 1800 × 2400 px. Tanggal, judul, caption, dan cerita masing-masing kenangan disimpan di array `memories` pada `script.js`; ubah nilai `DATE TO ADD` dan cerita netralnya sesuai detail yang ingin kamu bagikan. Tombol print mencetak foto dan caption yang sedang dipilih saja.
 
 Bagian Our Little Timeline di `index.html` menggunakan tiga tanggal/peristiwa yang sudah diketahui. Bagian Little Things About You memiliki 12 catatan yang dapat diedit pada array `reasons` di `script.js`.
+
+## Little love-story features
+
+- Open When Letters: edit the eight letter objects in `openWhenLetters` in `script.js`.
+- 100 Little Reasons: the `littleReasons` list is shuffled without repeats; progress is saved locally in this browser and can be restarted after all notes are opened.
+- The Love Jar: 30 notes are shuffled without repeats for each jar.
+- Surprise Box: four small stages, with the scrapbook image using the existing photo slot.
+- Relationship Counter: uses the local calendar date from 13 December 2025. Since no start time was provided, its hours, minutes, and seconds begin at local midnight.
+- Hidden Notes: nine small notes are placed throughout the page; discovery progress is saved locally in this browser.
+- Love Book: use the print button and choose “Save as PDF” in the browser's print dialog. It includes the timeline, letter, notes, and all eight scrapbook slots.
+
+Browser storage is optional: if it is unavailable, the interactions still work for the current visit. Replace empty files in `assets/photos/` with your own images to personalize the scrapbook, Surprise Box, and printable Love Book.
 
 ## Musik
 
