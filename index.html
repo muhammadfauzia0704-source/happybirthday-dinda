@@ -116,12 +116,16 @@
         </div>
         <figure class="hero-photo-card reveal">
           <div class="hero-photo-frame">
-            <img src="assets/photos/photo-01.jpg" alt="A favorite memory of Dinda and Fauzia" onerror="this.hidden=true">
-            <span class="hero-photo-placeholder" aria-hidden="true"><span class="photo-placeholder-flower">✿</span><span>A LITTLE PIECE OF US</span><small>A MOMENT TO KEEP</small></span>
+            <img id="heroPhoto" src="assets/photos/photo-01.jpg" alt="A favorite memory of us" onerror="this.hidden=true">
+            <span class="hero-photo-placeholder" id="heroPhotoPlaceholder"><span class="photo-placeholder-flower">✿</span><span>A LITTLE PIECE OF US</span><small id="heroPhotoHint">Add a photo from your device</small></span>
+            <label class="hero-photo-picker">
+              <input id="heroPhotoInput" type="file" accept="image/*" aria-label="Choose a photo for the birthday page">
+              <span id="heroPhotoPickerText">Choose a photo</span>
+            </label>
             <span class="hero-photo-index">01 / 08</span>
           </div>
-          <figcaption>One day, one moment, one little story.</figcaption>
-          <span class="hero-photo-date">A LITTLE MEMORY</span>
+          <figcaption id="heroPhotoCaption">One day, one moment, one little story.</figcaption>
+          <span class="hero-photo-date" id="heroPhotoStatus" role="status" aria-live="polite">A LITTLE MEMORY</span>
         </figure>
       </div>
     </section>

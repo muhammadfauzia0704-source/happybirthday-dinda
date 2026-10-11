@@ -65,6 +65,45 @@ function updateBirthdayCountdown() {
 updateBirthdayCountdown();
 setInterval(updateBirthdayCountdown, 1000);
 
+const heroPhoto = document.getElementById("heroPhoto");
+const heroPhotoInput = document.getElementById("heroPhotoInput");
+const heroPhotoPlaceholder = document.getElementById("heroPhotoPlaceholder");
+const heroPhotoPickerText = document.getElementById("heroPhotoPickerText");
+const heroPhotoCaption = document.getElementById("heroPhotoCaption");
+const heroPhotoStatus = document.getElementById("heroPhotoStatus");
+let selectedHeroPhotoUrl = "";
+
+heroPhotoInput.addEventListener("change", () => {
+  const file = heroPhotoInput.files?.[0];
+  if (!file) return;
+  if (!file.type.startsWith("image/")) {
+    heroPhotoStatus.textContent = "Please choose an image file.";
+    heroPhotoInput.value = "";
+    return;
+  }
+
+  const imageUrl = URL.createObjectURL(file);
+  const preview = new Image();
+  preview.onload = () => {
+    const previousUrl = selectedHeroPhotoUrl;
+    selectedHeroPhotoUrl = imageUrl;
+    heroPhoto.src = imageUrl;
+    heroPhoto.hidden = false;
+    heroPhoto.alt = `A memory selected from this device: ${file.name}`;
+    heroPhotoPlaceholder.hidden = true;
+    heroPhotoPickerText.textContent = "Change photo";
+    heroPhotoCaption.textContent = file.name;
+    heroPhotoStatus.textContent = "PHOTO ADDED";
+    if (previousUrl) URL.revokeObjectURL(previousUrl);
+  };
+  preview.onerror = () => {
+    URL.revokeObjectURL(imageUrl);
+    heroPhotoStatus.textContent = "That image could not be opened. Please choose another.";
+    heroPhotoInput.value = "";
+  };
+  preview.src = imageUrl;
+});
+
 enterSecret.addEventListener("click", () => {
   accessStep.classList.add("hidden");
   codeStep.classList.remove("hidden");
